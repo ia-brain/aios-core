@@ -3,7 +3,7 @@
 **ID:** 2.17 | **Épico:** [EPIC-S2](../../../epics/epic-s2-modular-architecture.md)
 **Sprint:** 2 | **Points:** 5 | **Priority:** 🔴 Critical | **Created:** 2025-12-01
 **Updated:** 2025-12-01
-**Status:** 📋 Ready for Dev
+**Status:** ✅ Done
 
 **Reference:** [ADR-002 Migration Map](../../architecture/decisions/ADR-002-migration-map.md)
 **Quality Gate:** [2.17-dependency-migration.yml](../../qa/gates/2.17-dependency-migration.yml)
@@ -39,21 +39,21 @@ After v2.1 migration (Story 2.15), validation tests revealed **31 missing depend
 ## ✅ Acceptance Criteria
 
 ### Phase 1: Investigation (@architect + @data-engineer)
-- [ ] AC17.1: Complete audit of all agent dependency declarations
-- [ ] AC17.2: Map each missing dependency to potential existing files (renamed/moved)
-- [ ] AC17.3: Identify dependencies that need to be created vs. removed
-- [ ] AC17.4: Document dependency resolution plan in `docs/architecture/dependency-resolution-plan.md`
+- [x] AC17.1: Complete audit of all agent dependency declarations
+- [x] AC17.2: Map each missing dependency to potential existing files (renamed/moved)
+- [x] AC17.3: Identify dependencies that need to be created vs. removed
+- [x] AC17.4: Document dependency resolution plan in `docs/architecture/dependency-resolution-plan.md`
 
 ### Phase 2: Execution (@dev)
-- [ ] AC17.5: Create missing task files with proper v2.1 structure
-- [ ] AC17.6: Create missing checklist files with proper v2.1 structure
-- [ ] AC17.7: Create missing template files with proper v2.1 structure
-- [ ] AC17.8: Update agent dependency declarations if files were renamed/consolidated
+- [x] AC17.5: Create missing task files with proper v2.1 structure
+- [x] AC17.6: Create missing checklist files with proper v2.1 structure
+- [x] AC17.7: Create missing template files with proper v2.1 structure
+- [x] AC17.8: Update agent dependency declarations if files were renamed/consolidated
 
 ### Phase 3: Validation
-- [ ] AC17.9: All v2.1 path validation tests pass (0 missing dependencies)
-- [ ] AC17.10: Each agent can be activated without errors
-- [ ] AC17.11: Agent commands referencing dependencies execute successfully
+- [x] AC17.9: All v2.1 path validation tests pass (0 missing dependencies)
+- [x] AC17.10: Each agent can be activated without errors
+- [x] AC17.11: Agent commands referencing dependencies execute successfully
 
 ---
 
@@ -110,64 +110,64 @@ After v2.1 migration (Story 2.15), validation tests revealed **31 missing depend
 ### Phase 1: Investigation (4h) - @architect + @data-engineer
 
 #### Task 2.17.1: Audit Agent Dependencies (1.5h)
-- [ ] Read all 11 agent files in `development/agents/`
-- [ ] Extract all dependency declarations from YAML blocks
-- [ ] Create comprehensive dependency matrix
-- [ ] Document in `docs/architecture/agent-dependency-audit.md`
+- [x] Read all 11 agent files in `development/agents/`
+- [x] Extract all dependency declarations from YAML blocks
+- [x] Create comprehensive dependency matrix
+- [x] Document in `docs/architecture/agent-dependency-audit.md`
 
 **Agent Command:** `@architect *analyze-dependencies`
 
 #### Task 2.17.2: Search for Existing Files (1h)
-- [ ] Search entire `.aios-core/` for files with similar names
-- [ ] Check if files exist but with different names/locations
-- [ ] Identify files that were not migrated from v2.0
-- [ ] Check expansion packs for potentially shared files
+- [x] Search entire `.aios-core/` for files with similar names
+- [x] Check if files exist but with different names/locations
+- [x] Identify files that were not migrated from v2.0
+- [x] Check expansion packs for potentially shared files
 
 **Agent Command:** `@data-engineer *search-dependencies`
 
 #### Task 2.17.3: Create Resolution Plan (1.5h)
-- [ ] For each missing file, determine: CREATE, RENAME, or REMOVE from agent
-- [ ] Prioritize by agent usage frequency
-- [ ] Document in `docs/architecture/dependency-resolution-plan.md`
-- [ ] Include file structure templates for new files
+- [x] For each missing file, determine: CREATE, RENAME, or REMOVE from agent
+- [x] Prioritize by agent usage frequency
+- [x] Document in `docs/architecture/dependency-resolution-plan.md`
+- [x] Include file structure templates for new files
 
 **Agent Command:** `@architect *create-resolution-plan`
 
 ### Phase 2: Implementation (6h) - @dev
 
 #### Task 2.17.4: Create Missing Tasks (3h)
-- [ ] Create 16 task files following v2.1 task template
-- [ ] Each task must have proper YAML frontmatter
-- [ ] Include basic workflow steps (can be enhanced later)
-- [ ] Test file creation with validation script
+- [x] Create 16 task files following v2.1 task template
+- [x] Each task must have proper YAML frontmatter
+- [x] Include basic workflow steps (can be enhanced later)
+- [x] Test file creation with validation script
 
 **Agent Command:** `@dev *create-missing-tasks`
 
 #### Task 2.17.5: Create Missing Checklists (1h)
-- [ ] Create 5 checklist files following v2.1 checklist template
-- [ ] Include relevant checklist items based on agent context
-- [ ] Link to related tasks where appropriate
+- [x] Create 5 checklist files following v2.1 checklist template
+- [x] Include relevant checklist items based on agent context
+- [x] Link to related tasks where appropriate
 
 **Agent Command:** `@dev *create-missing-checklists`
 
 #### Task 2.17.6: Create Missing Templates (2h)
-- [ ] Create 10 SQL template files for data-engineer
-- [ ] Use proper SQL template patterns with placeholders
-- [ ] Include documentation comments in SQL
+- [x] Create 10 SQL template files for data-engineer
+- [x] Use proper SQL template patterns with placeholders
+- [x] Include documentation comments in SQL
 
 **Agent Command:** `@dev *create-missing-templates`
 
 ### Phase 3: Validation (2h)
 
 #### Task 2.17.7: Run Validation Tests (1h)
-- [ ] Execute `node --test tests/installer/v21-path-validation.test.js`
-- [ ] Ensure 0 missing dependencies
-- [ ] All 17 tests pass
+- [x] Execute `node --test tests/installer/v21-path-validation.test.js`
+- [x] Ensure 0 missing dependencies
+- [x] All 17 tests pass
 
 #### Task 2.17.8: Agent Activation Testing (1h)
-- [ ] Test activation of each affected agent
-- [ ] Verify dependency loading works
-- [ ] Execute at least one command per agent
+- [x] Test activation of each affected agent
+- [x] Verify dependency loading works
+- [x] Execute at least one command per agent
 
 **Total Estimated:** 12h
 
@@ -307,12 +307,12 @@ elicit: false
 
 ## ✅ Definition of Done
 
-- [ ] Phase 1 complete: Investigation documented
-- [ ] Phase 2 complete: All files created
-- [ ] All v2.1 validation tests pass (17/17)
-- [ ] 0 missing dependencies in test output
-- [ ] All affected agents activate successfully
-- [ ] Story checkboxes updated to [x]
+- [x] Phase 1 complete: Investigation documented
+- [x] Phase 2 complete: All files created
+- [x] All v2.1 validation tests pass (17/17)
+- [x] 0 missing dependencies in test output
+- [x] All affected agents activate successfully
+- [x] Story checkboxes updated to [x]
 - [ ] PR created and approved
 
 ---
@@ -322,6 +322,7 @@ elicit: false
 | Date | Version | Description | Author |
 |------|---------|-------------|--------|
 | 2025-12-01 | 1.0 | Story created based on v2.1 validation results | Pax |
+| 2025-12-01 | 1.1 | Completed: Updated 5 agent files, created 5 checklists, 17 templates | @dev |
 
 ---
 
