@@ -1,44 +1,78 @@
 # STORY 3.2: CodeRabbit Local Extension
 
 **ID:** 3.2 | **Epic:** [EPIC-S3](../../../epics/epic-s3-quality-templates.md)
-**Sprint:** 3 | **Points:** 5 | **Priority:** 🔴 Critical | **Created:** 2025-01-19
+**Sprint:** 3 | **Points:** 0 | **Priority:** ⚫ N/A | **Created:** 2025-01-19
 **Updated:** 2025-12-01
-**Status:** 🟡 Ready for Dev
+**Status:** ❌ Cancelled
 
 **Reference:** [Quality Gates Decision 4](../../../audits/PEDRO-DECISION-LOG.md#decisão-4)
-**Quality Gate:** [3.2-coderabbit-local.yml](../../qa/gates/3.2-coderabbit-local.yml)
 
 **Predecessor:** Story 1.4 (IDE Selection) ✅
 
 ---
 
-## User Story
+## ⚠️ CANCELLATION NOTICE
+
+> **Status:** CANCELLED - Superseded by CLI + GitHub App Architecture
+>
+> **Decision Date:** 2025-12-01
+> **Decision By:** Pax (@po)
+>
+> ### Reason for Cancellation
+>
+> This story was created with the assumption that CodeRabbit IDE extensions would be the primary integration method. However, the architecture evolved to use a more powerful dual-mode approach:
+>
+> | Original Plan | Adopted Architecture |
+> |---------------|---------------------|
+> | IDE Extensions (per-IDE setup) | **CodeRabbit CLI** (IDE-agnostic) |
+> | Manual feedback in IDE | **Self-healing loops** with @qa/@devops agents |
+> | 6 separate setup guides | **Single WSL setup** works everywhere |
+> | Installer IDE detection | **Not needed** - CLI works universally |
+>
+> ### What Was Implemented Instead
+>
+> 1. **CodeRabbit CLI** - Installed in WSL (`~/.local/bin/coderabbit`)
+> 2. **CodeRabbit GitHub App** - Installed on repository ✅
+> 3. **.coderabbit.yaml** - Full configuration with path_instructions
+> 4. **Documentation** - 5 comprehensive guides in `docs/guides/coderabbit/`
+> 5. **Agent Integration** - @qa and @devops agents with self-healing workflows
+>
+> ### References
+>
+> - [CodeRabbit Integration Guide](../../../guides/coderabbit/coderabbit-integration-guide.md)
+> - [CodeRabbit Workflows](../../../guides/coderabbit/coderabbit-workflows.md)
+> - [CodeRabbit Configuration](../../../guides/coderabbit/coderabbit-configuration-reference.md)
+> - Story 3.1 (Pre-Commit Hooks) - ✅ Completed
+
+---
+
+## Original User Story (Historical)
 
 **Como** developer, **Quero** CodeRabbit local na IDE, **Para** feedback imediato durante coding
 
 ---
 
-## Acceptance Criteria
+## Original Acceptance Criteria (Not Implemented)
 
 ### IDE Support
-- [ ] AC3.2.1: Cursor IDE setup guide created
-- [ ] AC3.2.2: Windsurf IDE setup guide created
-- [ ] AC3.2.3: Trae IDE setup guide created
-- [ ] AC3.2.4: Zed IDE setup guide created
-- [ ] AC3.2.5: Antigravity IDE setup guide created
-- [ ] AC3.2.6: Continue.dev setup guide created
+- [x] ~~AC3.2.1: Cursor IDE setup guide created~~ → Superseded by CLI
+- [x] ~~AC3.2.2: Windsurf IDE setup guide created~~ → Superseded by CLI
+- [x] ~~AC3.2.3: Trae IDE setup guide created~~ → Superseded by CLI
+- [x] ~~AC3.2.4: Zed IDE setup guide created~~ → Superseded by CLI
+- [x] ~~AC3.2.5: Antigravity IDE setup guide created~~ → Superseded by CLI
+- [x] ~~AC3.2.6: Continue.dev setup guide created~~ → Superseded by CLI
 
 ### Integration
-- [ ] AC3.2.7: Extension detection in installer
-- [ ] AC3.2.8: Auto-recommendation based on detected IDE
-- [ ] AC3.2.9: Installation link provided per IDE
+- [x] ~~AC3.2.7: Extension detection in installer~~ → Not needed
+- [x] ~~AC3.2.8: Auto-recommendation based on detected IDE~~ → Not needed
+- [x] ~~AC3.2.9: Installation link provided per IDE~~ → Not needed
 
 ### Documentation
-- [ ] AC3.2.10: Central setup documentation page
+- [x] AC3.2.10: Central setup documentation page → ✅ `docs/guides/coderabbit/README.md`
 
 ---
 
-## Scope
+## Original Scope (Historical)
 
 ### IDE Extension Integration
 
@@ -124,8 +158,10 @@
 |------|---------|-------------|--------|
 | 2025-01-19 | 1.0 | Story created (combined file) | River |
 | 2025-12-01 | 2.0 | Separated into individual story file | Pax (@po) |
+| 2025-12-01 | 3.0 | **CANCELLED** - Superseded by CLI + GitHub App architecture | Pax (@po) |
 
 ---
 
 **Created by:** River 🌊
 **Separated by:** Pax 🎯 (PO)
+**Cancelled by:** Pax 🎯 (PO) - 2025-12-01

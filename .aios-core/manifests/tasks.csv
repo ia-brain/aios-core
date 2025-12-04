@@ -56,7 +56,7 @@ dev-optimize-performance,Dev Optimize Performance,development,TASK-FORMAT-V1,fal
 dev-suggest-refactoring,Dev Suggest Refactoring,development,TASK-FORMAT-V1,false,.aios-core/development/tasks/dev-suggest-refactoring.md,active
 dev-validate-next-story,Dev Validate Next Story,development,TASK-FORMAT-V1,false,.aios-core/development/tasks/dev-validate-next-story.md,active
 document-project,Document Project,general,TASK-FORMAT-V1,false,.aios-core/development/tasks/document-project.md,active
-environment-bootstrap,Environment Bootstrap,devops,TASK-FORMAT-V1,true,.aios-core/development/tasks/environment-bootstrap.md,active
+environment-bootstrap,Environment Bootstrap,general,TASK-FORMAT-V1,true,.aios-core/development/tasks/environment-bootstrap.md,active
 execute-checklist,Execute Checklist,general,TASK-FORMAT-V1,false,.aios-core/development/tasks/execute-checklist.md,active
 export-design-tokens-dtcg,Export Design Tokens Dtcg,general,TASK-FORMAT-V1,false,.aios-core/development/tasks/export-design-tokens-dtcg.md,active
 extend-pattern,Extend Pattern,general,TASK-FORMAT-V1,false,.aios-core/development/tasks/extend-pattern.md,active
