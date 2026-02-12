@@ -63,13 +63,22 @@ async function main() {
   }));
 }
 
+/**
+ * Safely exit the process — no-op inside Jest workers to prevent worker crashes.
+ * @param {number} code - Exit code
+ */
+function safeExit(code) {
+  if (process.env.JEST_WORKER_ID) return;
+  process.exit(code);
+}
+
 /** Entry point runner — sets safety timeout and executes main(). */
 function run() {
-  const timer = setTimeout(() => process.exit(0), HOOK_TIMEOUT_MS);
+  const timer = setTimeout(() => safeExit(0), HOOK_TIMEOUT_MS);
   timer.unref();
   main().catch((err) => {
     console.error(`[synapse-hook] ${err.message}`);
-    process.exit(0);
+    safeExit(0);
   });
 }
 
